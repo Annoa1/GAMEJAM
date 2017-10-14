@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour {
 
 	public GameObject enemy;
-	public float invocationSpeed = 0.001f;
+	public float invocationSpeed = 2f;
 
 	public Transform upMarker;
 	public Transform buttomMarker;
@@ -26,7 +26,7 @@ public class EnemySpawner : MonoBehaviour {
 		buttomY = buttomMarker.position.y;
 
 		//Spawn des sandwichs en continue
-		InvokeRepeating("InvokeEnemySpawn", 1, 1);
+		InvokeRepeating("InvokeEnemySpawn", 1f, invocationSpeed);
 	}
 
 	void Update () {
@@ -36,7 +36,7 @@ public class EnemySpawner : MonoBehaviour {
 	//délai de spawn d'un enemy
 	void InvokeEnemySpawn()
 	{
-		Invoke("SpawnEnemy",Random.Range(10f, 20f));
+		Invoke("SpawnEnemy",Random.Range(0f, 1.2f));
 		//Invoke("SpawnEnemy", 4f);
 	}
 
@@ -52,6 +52,6 @@ public class EnemySpawner : MonoBehaviour {
 			instance.transform.localScale = new Vector3(bigScaleSize,bigScaleSize,bigScaleSize);
 		}*/
 
-		Destroy(instance, 10);
+		Destroy(instance, 15);
 	}
 }

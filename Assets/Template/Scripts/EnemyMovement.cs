@@ -31,4 +31,17 @@ public class EnemyMovement : MonoBehaviour
 		transform.position = position;
 	}
 
+
+	void OnTriggerEnter2D(Collision2D collision)
+	{
+		print ("fuck");
+
+		if (collision.gameObject.GetComponent<ProjectileController> () != null) 
+		{
+			print("salut");
+
+			Destroy (gameObject);
+		}
+	}
+
 }

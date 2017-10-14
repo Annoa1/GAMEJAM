@@ -32,7 +32,7 @@ public class EnemyMovement : MonoBehaviour
 	}
 
 
-	void OnTriggerEnter2D(Collision2D collision)
+	void OnTriggerEnter2D(Collider2D collision)
 	{
 		print ("fuck");
 
